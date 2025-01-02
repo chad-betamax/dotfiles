@@ -4,7 +4,7 @@
 # aliases that work only in the roles_frontend repo
 #[[ x"${ROLES_DEV}" == "x" ]] && true || alias acc='cargo run --'
 
-alias dot='chezmoi edit'
+alias dot='chezmoi edit --apply'
 
 alias pingg='ping google.com'
 

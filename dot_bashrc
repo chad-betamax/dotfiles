@@ -25,6 +25,10 @@ set_PATH $HOME/.cargo/bin/ /opt/nvim-linux64/bin/
 # load ssh-agent for the session
 SSHsession doug@lastyard
 
+# delta used to diff files
+export DELTA_FEATURES=+side-by-side
+
+
 # Direnv functionality
 #eval "$(direnv hook bash)"
 
