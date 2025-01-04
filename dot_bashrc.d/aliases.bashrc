@@ -5,6 +5,7 @@
 #[[ x"${ROLES_DEV}" == "x" ]] && true || alias acc='cargo run --'
 
 alias dot='chezmoi edit --apply'
+alias todo='todotxt-tui'
 
 alias pingg='ping google.com'
 
