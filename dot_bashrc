@@ -33,7 +33,7 @@ just-tools .local/bin/metatools/docker.justfile
 just-tools .local/bin/metatools/bash.justfile
 
 # Direnv functionality
-#eval "$(direnv hook bash)"
+eval "$(direnv hook bash)"
 
 # pyenv functionality
 #export PYENV_ROOT="$HOME/.pyenv"
