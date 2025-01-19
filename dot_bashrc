@@ -28,6 +28,14 @@ SSHsession doug@lastyard
 # delta used to diff files
 export DELTA_FEATURES=+side-by-side
 
+# Load completion files from ~/.config/bash/completions/
+if [ -d "$HOME/.config/bash/completions" ]; then
+    for file in "$HOME/.config/bash/completions/"*; do
+        [ -r "$file" ] && . "$file"
+    done
+fi
+
+
 # handy-dandy shortcuts for various workflows
 just-tools .local/bin/metatools/docker.justfile
 just-tools .local/bin/metatools/bash.justfile
