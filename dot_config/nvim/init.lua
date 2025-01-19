@@ -1,5 +1,7 @@
+-- Set the Leader key to \
 vim.g.mapleader = "\\"
 
+-- Set up lazy.nvim as plugin manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -12,9 +14,12 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
-
 require("lazy").setup("plugins")
 
+-- Copy and paste functionality
+vim.opt.clipboard = "unnamedplus"
+-- set y to yank text to right click
+vim.keymap.set("v", "<leader>y", '"*y', { noremap = true, silent = true })
 
 
 -- Function to set indentation with customizable values
