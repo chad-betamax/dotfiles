@@ -37,3 +37,11 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+
+-- Enable search highlighting
+vim.opt.hlsearch = true
+
+-- Disable highlight after leaving command line
+vim.cmd [[
+  autocmd CmdlineLeave /,? :set nohlsearch
+]]
