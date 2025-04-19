@@ -1,6 +1,14 @@
 #!/bin/sh
 
-if [ ! -f "$HOME/.config/chezmoi/key.txt" ]; then
-    chezmoi age decrypt --output "$HOME/.config/chezmoi/key.txt" --passphrase "{{ .chezmoi.sourceDir }}/key.txt.age"
-    chmod 600 "$HOME/.config/chezmoi/key.txt"
+DIR="$HOME/.config/chezmoi"
+
+
+
+
+
+
+if [ ! -f "$DIR/key.txt" ]; then
+    if [ ! -d $DIR ]; then mkdir $DIR; fi
+    chezmoi age decrypt --output "$DIR/key.txt" --passphrase "{{ .chezmoi.sourceDir }}/key.txt.age"
+    chmod 600 "$DIR/key.txt"
 fi
