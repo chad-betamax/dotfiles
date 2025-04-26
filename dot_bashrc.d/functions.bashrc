@@ -27,6 +27,10 @@ colourprompt() {
           # light yellow
           colour='1;33m' 
           ;;
+        chad)
+          # light blue
+          colour='1;34m' 
+          ;;
         doug)
           # light blue
           colour='1;34m' 
@@ -64,18 +68,16 @@ function SSHsession() {
     fi
 }
 
-
-# Provided a bunch of paths; add em to the user's PATH
-# TODO check for doublers
+# Provided a bunch of paths; add them to the user's PATH
 function set_PATH() {
-    for i in $@;
-    do
-      if [ -d "$i" ]; then
-        PATH=:$PATH
-	PATH=$i${PATH//:$i:/:}
-      fi
+    for i in "$@"; do
+        if [ -d "$i" ] && [[ ":$PATH:" != *":$i:"* ]]; then
+            PATH="$i:$PATH"
+        fi
     done
+    export PATH  # ensure changes are exported so they affect the current shell
 }
+
 
 # Set terminal title dynamically when using $EDITOR
 case $TERM in

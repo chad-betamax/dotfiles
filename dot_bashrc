@@ -20,7 +20,7 @@ for FILE in ~/.bashrc.d/*.bashrc; do source $FILE; done
 colourprompt
 
 # add the following to our $PATH
-set_PATH $HOME/.cargo/bin/ /opt/nvim-linux64/bin/
+set_PATH "$HOME/.cargo/bin/" "/opt/nvim-linux-x86_64/bin/" 
 
 # load ssh-agent for the session
 SSHsession doug@lastyard
@@ -42,14 +42,3 @@ just-tools .local/bin/metatools/bash.justfile
 
 # Direnv functionality
 eval "$(direnv hook bash)"
-
-# pyenv functionality
-#export PYENV_ROOT="$HOME/.pyenv"
-#$[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-#eval "$(pyenv init -)"
-
-# BEGIN ANSIBLE MANAGED BLOCK
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-# END ANSIBLE MANAGED BLOCK
