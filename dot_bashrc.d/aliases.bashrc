@@ -6,6 +6,8 @@
 
 # the dotfile config files manager
 alias cz='chezmoi'
+# needed so bash completions work for the cz alias as well as the command chezmoi
+complete -F __start_chezmoi cz
 
 alias todo='todotxt-tui'
 
